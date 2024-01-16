@@ -1,0 +1,4 @@
+name = "solana-url-shortener"
+main = "src/index.js"
+compatibility_date = "2023-12-18"
+node_compat = true

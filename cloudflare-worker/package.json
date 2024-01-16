@@ -1,0 +1,19 @@
+{
+  "name": "solana-url-shortener",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@solana/web3.js": "^1.89.0",
+    "bs58": "^5.0.0",
+    "hono": "^3.12.3"
+  }
+}

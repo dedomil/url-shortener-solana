@@ -1099,7 +1099,6 @@ dependencies = [
  "libc",
  "rand_chacha 0.3.1",
  "rand_core 0.6.4",
- "serde",
 ]
 
 [[package]]
@@ -1120,7 +1119,6 @@ checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
 dependencies = [
  "ppv-lite86",
  "rand_core 0.6.4",
- "serde",
 ]
 
 [[package]]
@@ -1139,7 +1137,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 dependencies = [
  "getrandom 0.2.12",
- "serde",
 ]
 
 [[package]]
@@ -1495,18 +1492,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tiny_id"
-version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26f686a3694293e6039185ef4cf4e3ca5101a09172426ac8da84c3d60564fb93"
-dependencies = [
- "getrandom 0.2.12",
- "rand 0.8.5",
- "rand_chacha 0.3.1",
- "serde",
-]
-
-[[package]]
 name = "tinyvec"
 version = "1.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1562,7 +1547,6 @@ name = "url-shortener"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",
- "tiny_id",
 ]
 
 [[package]]

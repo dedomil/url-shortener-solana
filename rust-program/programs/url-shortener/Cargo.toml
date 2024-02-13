@@ -17,5 +17,3 @@ default = []
 
 [dependencies]
 anchor-lang = "0.29.0"
-tiny_id = "0.1.6"
-# ahash = "=0.8.6"

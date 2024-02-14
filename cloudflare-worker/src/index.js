@@ -1,6 +1,6 @@
 import { Connection, PublicKey } from "@solana/web3.js";
 import { Hono } from "hono";
-import { AnchorProvider, Program } from "@coral-xyz/anchor";
+import { AnchorProvider, BN, Program } from "@coral-xyz/anchor";
 
 import { HELIUS_API_KEY, PROGRAM_ID } from "./config";
 import IDL from "../idl.json";
@@ -27,15 +27,10 @@ app.get("/:shortcode", async (c) => {
         });
     }
 
-    let bytes = encode(Buffer.from(shortcode));
-
-    let offset =
-        8 + // discriminator
-        32 + // pubkey
-        4; // shortcode
+    let bytes = encode(new BN(shortcode).toArrayLike(Buffer, "le", 8));
 
     let [account] = await program.account.urlAccount.all([
-        { memcmp: { offset, bytes } },
+        { memcmp: { offset: 40, bytes } },
     ]);
 
     if (!account) {

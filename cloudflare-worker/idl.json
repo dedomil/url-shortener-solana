@@ -5,11 +5,30 @@
         {
             "name": "create",
             "accounts": [
-                { "name": "urlAccount", "isMut": true, "isSigner": true },
-                { "name": "signer", "isMut": true, "isSigner": true },
-                { "name": "systemProgram", "isMut": false, "isSigner": false }
+                {
+                    "name": "urlAccount",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
             ],
-            "args": [{ "name": "url", "type": "string" }]
+            "args": [
+                {
+                    "name": "args",
+                    "type": {
+                        "defined": "CreateUrlAccountArgs"
+                    }
+                }
+            ]
         }
     ],
     "accounts": [
@@ -18,14 +37,41 @@
             "type": {
                 "kind": "struct",
                 "fields": [
-                    { "name": "authority", "type": "publicKey" },
-                    { "name": "shortcode", "type": "string" },
-                    { "name": "url", "type": "string" }
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "shortcode",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "url",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "CreateUrlAccountArgs",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "url",
+                        "type": "string"
+                    }
                 ]
             }
         }
     ],
     "errors": [
-        { "code": 6000, "name": "EmptyURL", "msg": "URL cannot be empty" }
+        {
+            "code": 6000,
+            "name": "EmptyURL",
+            "msg": "URL cannot be empty"
+        }
     ]
 }
